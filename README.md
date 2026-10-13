@@ -64,3 +64,7 @@ Per bank `b`, both ways unless noted:
 Sessions for SPAT Revolution, L-ISA, d&b Soundscape (DS100) and CODA SPACE
 HUB, built on those processors' own Chataigne modules:
 https://github.com/veloursdevices/karl-chataigne-module/tree/main/examples
+
+## License
+
+MIT, see `LICENSE`.
