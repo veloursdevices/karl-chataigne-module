@@ -1,0 +1,1238 @@
+{
+  "name": "KARL",
+  "type": "OSC",
+  "path": "Hardware",
+  "version": "1.0.0",
+  "author": "Velours Devices",
+  "description": "KARL by Velours Devices as a control surface: 24 knobs and 40 keys per bank, with names, colours and values sent back to KARL. In the KARL configurator, add the Chataigne target in Connections and an OSC surface page from Library.",
+  "url": "https://github.com/veloursdevices/karl-chataigne-module",
+  "downloadURL": "https://github.com/veloursdevices/karl-chataigne-module/archive/refs/heads/main.zip",
+  "hasInput": true,
+  "hasOutput": true,
+  "hideDefaultCommands": false,
+  "defaults": {
+    "autoAdd": false,
+    "oscInput": {
+      "localPort": 12000
+    },
+    "OSC Outputs": {
+      "OSC Output": {
+        "local": true,
+        "remotePort": 12001
+      }
+    }
+  },
+  "parameters": {
+    "Log Incoming": {
+      "type": "Boolean",
+      "default": false,
+      "description": "Log every message from KARL"
+    }
+  },
+  "scripts": [
+    "karl.js"
+  ],
+  "values": {
+    "Page": {
+      "type": "String",
+      "description": "The page on KARL's screen"
+    },
+    "Bank 1": {
+      "type": "Container",
+      "Encoders": {
+        "type": "Container",
+        "Encoder 1": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 2": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 3": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 4": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 5": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 6": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 7": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 8": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 9": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 10": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 11": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 12": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 13": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 14": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 15": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 16": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 17": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 18": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 19": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 20": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 21": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 22": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 23": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 24": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "Keys": {
+        "type": "Container",
+        "Top 1": {
+          "type": "Boolean"
+        },
+        "Top 2": {
+          "type": "Boolean"
+        },
+        "Top 3": {
+          "type": "Boolean"
+        },
+        "Top 4": {
+          "type": "Boolean"
+        },
+        "Top 5": {
+          "type": "Boolean"
+        },
+        "Top 6": {
+          "type": "Boolean"
+        },
+        "Top 7": {
+          "type": "Boolean"
+        },
+        "Top 8": {
+          "type": "Boolean"
+        },
+        "Top 9": {
+          "type": "Boolean"
+        },
+        "Top 10": {
+          "type": "Boolean"
+        },
+        "Top 11": {
+          "type": "Boolean"
+        },
+        "Top 12": {
+          "type": "Boolean"
+        },
+        "Bottom 1": {
+          "type": "Boolean"
+        },
+        "Bottom 2": {
+          "type": "Boolean"
+        },
+        "Bottom 3": {
+          "type": "Boolean"
+        },
+        "Bottom 4": {
+          "type": "Boolean"
+        },
+        "Bottom 5": {
+          "type": "Boolean"
+        },
+        "Bottom 6": {
+          "type": "Boolean"
+        },
+        "Bottom 7": {
+          "type": "Boolean"
+        },
+        "Bottom 8": {
+          "type": "Boolean"
+        },
+        "Bottom 9": {
+          "type": "Boolean"
+        },
+        "Bottom 10": {
+          "type": "Boolean"
+        },
+        "Bottom 11": {
+          "type": "Boolean"
+        },
+        "Bottom 12": {
+          "type": "Boolean"
+        },
+        "Left 1": {
+          "type": "Boolean"
+        },
+        "Left 2": {
+          "type": "Boolean"
+        },
+        "Left 3": {
+          "type": "Boolean"
+        },
+        "Left 4": {
+          "type": "Boolean"
+        },
+        "Left 5": {
+          "type": "Boolean"
+        },
+        "Left 6": {
+          "type": "Boolean"
+        },
+        "Left 7": {
+          "type": "Boolean"
+        },
+        "Left 8": {
+          "type": "Boolean"
+        },
+        "Right 1": {
+          "type": "Boolean"
+        },
+        "Right 2": {
+          "type": "Boolean"
+        },
+        "Right 3": {
+          "type": "Boolean"
+        },
+        "Right 4": {
+          "type": "Boolean"
+        },
+        "Right 5": {
+          "type": "Boolean"
+        },
+        "Right 6": {
+          "type": "Boolean"
+        },
+        "Right 7": {
+          "type": "Boolean"
+        },
+        "Right 8": {
+          "type": "Boolean"
+        }
+      }
+    },
+    "Bank 2": {
+      "type": "Container",
+      "Encoders": {
+        "type": "Container",
+        "Encoder 1": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 2": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 3": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 4": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 5": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 6": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 7": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 8": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 9": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 10": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 11": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 12": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 13": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 14": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 15": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 16": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 17": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 18": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 19": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 20": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 21": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 22": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 23": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 24": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "Keys": {
+        "type": "Container",
+        "Top 1": {
+          "type": "Boolean"
+        },
+        "Top 2": {
+          "type": "Boolean"
+        },
+        "Top 3": {
+          "type": "Boolean"
+        },
+        "Top 4": {
+          "type": "Boolean"
+        },
+        "Top 5": {
+          "type": "Boolean"
+        },
+        "Top 6": {
+          "type": "Boolean"
+        },
+        "Top 7": {
+          "type": "Boolean"
+        },
+        "Top 8": {
+          "type": "Boolean"
+        },
+        "Top 9": {
+          "type": "Boolean"
+        },
+        "Top 10": {
+          "type": "Boolean"
+        },
+        "Top 11": {
+          "type": "Boolean"
+        },
+        "Top 12": {
+          "type": "Boolean"
+        },
+        "Bottom 1": {
+          "type": "Boolean"
+        },
+        "Bottom 2": {
+          "type": "Boolean"
+        },
+        "Bottom 3": {
+          "type": "Boolean"
+        },
+        "Bottom 4": {
+          "type": "Boolean"
+        },
+        "Bottom 5": {
+          "type": "Boolean"
+        },
+        "Bottom 6": {
+          "type": "Boolean"
+        },
+        "Bottom 7": {
+          "type": "Boolean"
+        },
+        "Bottom 8": {
+          "type": "Boolean"
+        },
+        "Bottom 9": {
+          "type": "Boolean"
+        },
+        "Bottom 10": {
+          "type": "Boolean"
+        },
+        "Bottom 11": {
+          "type": "Boolean"
+        },
+        "Bottom 12": {
+          "type": "Boolean"
+        },
+        "Left 1": {
+          "type": "Boolean"
+        },
+        "Left 2": {
+          "type": "Boolean"
+        },
+        "Left 3": {
+          "type": "Boolean"
+        },
+        "Left 4": {
+          "type": "Boolean"
+        },
+        "Left 5": {
+          "type": "Boolean"
+        },
+        "Left 6": {
+          "type": "Boolean"
+        },
+        "Left 7": {
+          "type": "Boolean"
+        },
+        "Left 8": {
+          "type": "Boolean"
+        },
+        "Right 1": {
+          "type": "Boolean"
+        },
+        "Right 2": {
+          "type": "Boolean"
+        },
+        "Right 3": {
+          "type": "Boolean"
+        },
+        "Right 4": {
+          "type": "Boolean"
+        },
+        "Right 5": {
+          "type": "Boolean"
+        },
+        "Right 6": {
+          "type": "Boolean"
+        },
+        "Right 7": {
+          "type": "Boolean"
+        },
+        "Right 8": {
+          "type": "Boolean"
+        }
+      }
+    },
+    "Bank 3": {
+      "type": "Container",
+      "Encoders": {
+        "type": "Container",
+        "Encoder 1": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 2": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 3": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 4": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 5": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 6": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 7": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 8": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 9": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 10": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 11": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 12": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 13": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 14": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 15": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 16": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 17": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 18": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 19": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 20": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 21": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 22": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 23": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 24": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "Keys": {
+        "type": "Container",
+        "Top 1": {
+          "type": "Boolean"
+        },
+        "Top 2": {
+          "type": "Boolean"
+        },
+        "Top 3": {
+          "type": "Boolean"
+        },
+        "Top 4": {
+          "type": "Boolean"
+        },
+        "Top 5": {
+          "type": "Boolean"
+        },
+        "Top 6": {
+          "type": "Boolean"
+        },
+        "Top 7": {
+          "type": "Boolean"
+        },
+        "Top 8": {
+          "type": "Boolean"
+        },
+        "Top 9": {
+          "type": "Boolean"
+        },
+        "Top 10": {
+          "type": "Boolean"
+        },
+        "Top 11": {
+          "type": "Boolean"
+        },
+        "Top 12": {
+          "type": "Boolean"
+        },
+        "Bottom 1": {
+          "type": "Boolean"
+        },
+        "Bottom 2": {
+          "type": "Boolean"
+        },
+        "Bottom 3": {
+          "type": "Boolean"
+        },
+        "Bottom 4": {
+          "type": "Boolean"
+        },
+        "Bottom 5": {
+          "type": "Boolean"
+        },
+        "Bottom 6": {
+          "type": "Boolean"
+        },
+        "Bottom 7": {
+          "type": "Boolean"
+        },
+        "Bottom 8": {
+          "type": "Boolean"
+        },
+        "Bottom 9": {
+          "type": "Boolean"
+        },
+        "Bottom 10": {
+          "type": "Boolean"
+        },
+        "Bottom 11": {
+          "type": "Boolean"
+        },
+        "Bottom 12": {
+          "type": "Boolean"
+        },
+        "Left 1": {
+          "type": "Boolean"
+        },
+        "Left 2": {
+          "type": "Boolean"
+        },
+        "Left 3": {
+          "type": "Boolean"
+        },
+        "Left 4": {
+          "type": "Boolean"
+        },
+        "Left 5": {
+          "type": "Boolean"
+        },
+        "Left 6": {
+          "type": "Boolean"
+        },
+        "Left 7": {
+          "type": "Boolean"
+        },
+        "Left 8": {
+          "type": "Boolean"
+        },
+        "Right 1": {
+          "type": "Boolean"
+        },
+        "Right 2": {
+          "type": "Boolean"
+        },
+        "Right 3": {
+          "type": "Boolean"
+        },
+        "Right 4": {
+          "type": "Boolean"
+        },
+        "Right 5": {
+          "type": "Boolean"
+        },
+        "Right 6": {
+          "type": "Boolean"
+        },
+        "Right 7": {
+          "type": "Boolean"
+        },
+        "Right 8": {
+          "type": "Boolean"
+        }
+      }
+    },
+    "Bank 4": {
+      "type": "Container",
+      "Encoders": {
+        "type": "Container",
+        "Encoder 1": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 2": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 3": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 4": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 5": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 6": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 7": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 8": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 9": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 10": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 11": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 12": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 13": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 14": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 15": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 16": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 17": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 18": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 19": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 20": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 21": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 22": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 23": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        },
+        "Encoder 24": {
+          "type": "Float",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "Keys": {
+        "type": "Container",
+        "Top 1": {
+          "type": "Boolean"
+        },
+        "Top 2": {
+          "type": "Boolean"
+        },
+        "Top 3": {
+          "type": "Boolean"
+        },
+        "Top 4": {
+          "type": "Boolean"
+        },
+        "Top 5": {
+          "type": "Boolean"
+        },
+        "Top 6": {
+          "type": "Boolean"
+        },
+        "Top 7": {
+          "type": "Boolean"
+        },
+        "Top 8": {
+          "type": "Boolean"
+        },
+        "Top 9": {
+          "type": "Boolean"
+        },
+        "Top 10": {
+          "type": "Boolean"
+        },
+        "Top 11": {
+          "type": "Boolean"
+        },
+        "Top 12": {
+          "type": "Boolean"
+        },
+        "Bottom 1": {
+          "type": "Boolean"
+        },
+        "Bottom 2": {
+          "type": "Boolean"
+        },
+        "Bottom 3": {
+          "type": "Boolean"
+        },
+        "Bottom 4": {
+          "type": "Boolean"
+        },
+        "Bottom 5": {
+          "type": "Boolean"
+        },
+        "Bottom 6": {
+          "type": "Boolean"
+        },
+        "Bottom 7": {
+          "type": "Boolean"
+        },
+        "Bottom 8": {
+          "type": "Boolean"
+        },
+        "Bottom 9": {
+          "type": "Boolean"
+        },
+        "Bottom 10": {
+          "type": "Boolean"
+        },
+        "Bottom 11": {
+          "type": "Boolean"
+        },
+        "Bottom 12": {
+          "type": "Boolean"
+        },
+        "Left 1": {
+          "type": "Boolean"
+        },
+        "Left 2": {
+          "type": "Boolean"
+        },
+        "Left 3": {
+          "type": "Boolean"
+        },
+        "Left 4": {
+          "type": "Boolean"
+        },
+        "Left 5": {
+          "type": "Boolean"
+        },
+        "Left 6": {
+          "type": "Boolean"
+        },
+        "Left 7": {
+          "type": "Boolean"
+        },
+        "Left 8": {
+          "type": "Boolean"
+        },
+        "Right 1": {
+          "type": "Boolean"
+        },
+        "Right 2": {
+          "type": "Boolean"
+        },
+        "Right 3": {
+          "type": "Boolean"
+        },
+        "Right 4": {
+          "type": "Boolean"
+        },
+        "Right 5": {
+          "type": "Boolean"
+        },
+        "Right 6": {
+          "type": "Boolean"
+        },
+        "Right 7": {
+          "type": "Boolean"
+        },
+        "Right 8": {
+          "type": "Boolean"
+        }
+      }
+    }
+  },
+  "commands": {
+    "Set Encoder": {
+      "menu": "Encoders",
+      "callback": "setEncoder",
+      "parameters": {
+        "Bank": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 99,
+          "description": "The KARL page's bank"
+        },
+        "Encoder": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 24,
+          "description": "1-24, rows left to right, top row first"
+        },
+        "Value": {
+          "type": "Float",
+          "default": 0,
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    "Set Encoder Name": {
+      "menu": "Encoders",
+      "callback": "setEncoderName",
+      "parameters": {
+        "Bank": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 99,
+          "description": "The KARL page's bank"
+        },
+        "Encoder": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 24,
+          "description": "1-24, rows left to right, top row first"
+        },
+        "Name": {
+          "type": "String",
+          "default": ""
+        }
+      }
+    },
+    "Set Encoder Color": {
+      "menu": "Encoders",
+      "callback": "setEncoderColor",
+      "parameters": {
+        "Bank": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 99,
+          "description": "The KARL page's bank"
+        },
+        "Encoder": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 24,
+          "description": "1-24, rows left to right, top row first"
+        },
+        "Color": {
+          "type": "Color",
+          "default": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    "Set Key": {
+      "menu": "Keys",
+      "callback": "setKey",
+      "parameters": {
+        "Bank": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 99,
+          "description": "The KARL page's bank"
+        },
+        "Edge": {
+          "type": "Enum",
+          "options": {
+            "Top": "top",
+            "Bottom": "bottom",
+            "Left": "left",
+            "Right": "right"
+          }
+        },
+        "Key": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 12,
+          "description": "From the left (top, bottom) or the top (left, right)"
+        },
+        "On": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Set Key Name": {
+      "menu": "Keys",
+      "callback": "setKeyName",
+      "parameters": {
+        "Bank": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 99,
+          "description": "The KARL page's bank"
+        },
+        "Edge": {
+          "type": "Enum",
+          "options": {
+            "Top": "top",
+            "Bottom": "bottom",
+            "Left": "left",
+            "Right": "right"
+          }
+        },
+        "Key": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 12,
+          "description": "From the left (top, bottom) or the top (left, right)"
+        },
+        "Name": {
+          "type": "String",
+          "default": ""
+        }
+      }
+    },
+    "Set Key Color": {
+      "menu": "Keys",
+      "callback": "setKeyColor",
+      "parameters": {
+        "Bank": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 99,
+          "description": "The KARL page's bank"
+        },
+        "Edge": {
+          "type": "Enum",
+          "options": {
+            "Top": "top",
+            "Bottom": "bottom",
+            "Left": "left",
+            "Right": "right"
+          }
+        },
+        "Key": {
+          "type": "Integer",
+          "default": 1,
+          "min": 1,
+          "max": 12,
+          "description": "From the left (top, bottom) or the top (left, right)"
+        },
+        "Color": {
+          "type": "Color",
+          "default": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    "Go To Page": {
+      "menu": "Pages",
+      "callback": "goToPage",
+      "parameters": {
+        "Page": {
+          "type": "String",
+          "default": "1",
+          "description": "A page name, or its number in KARL's list"
+        }
+      }
+    },
+    "Resend All": {
+      "menu": "Pages",
+      "callback": "resendAll",
+      "parameters": {}
+    }
+  }
+}

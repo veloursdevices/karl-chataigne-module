@@ -1,0 +1,7116 @@
+{
+ "metaData": {
+  "version": "1.10.3",
+  "versionNumber": 68099
+ },
+ "modules": {
+  "items": [
+   {
+    "niceName": "KARL",
+    "type": "KARL",
+    "params": {
+     "containers": {
+      "oscInput": {
+       "parameters": [
+        {
+         "value": 12000,
+         "controlAddress": "/localPort"
+        }
+       ]
+      },
+      "oscOutputs": {
+       "items": [
+        {
+         "parameters": [
+          {
+           "value": true,
+           "controlAddress": "/local"
+          },
+          {
+           "value": 12001,
+           "controlAddress": "/remotePort"
+          }
+         ],
+         "niceName": "OSC Output",
+         "type": "BaseItem"
+        }
+       ]
+      }
+     }
+    }
+   },
+   {
+    "niceName": "d&b DS100",
+    "type": "d&b DS100",
+    "params": {
+     "containers": {
+      "oscInput": {
+       "parameters": [
+        {
+         "value": 50011,
+         "controlAddress": "/localPort"
+        }
+       ]
+      },
+      "oscOutputs": {
+       "items": [
+        {
+         "parameters": [
+          {
+           "value": false,
+           "controlAddress": "/local"
+          },
+          {
+           "value": "192.168.1.100",
+           "controlAddress": "/remoteHost"
+          },
+          {
+           "value": 50010,
+           "controlAddress": "/remotePort"
+          }
+         ],
+         "niceName": "OSC Output",
+         "type": "BaseItem"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ },
+ "states": {
+  "items": [
+   {
+    "parameters": [
+     {
+      "value": [
+       -520.0,
+       -300.0
+      ],
+      "controlAddress": "/viewUIPosition"
+     },
+     {
+      "value": [
+       500.0,
+       640.0
+      ],
+      "controlAddress": "/viewUISize"
+     },
+     {
+      "value": true,
+      "controlAddress": "/active"
+     }
+    ],
+    "niceName": "KARL bank 1 > Soundscape",
+    "type": "State",
+    "processors": {
+     "items": [
+      {
+       "niceName": "KARL labels",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/page",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 13,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 19,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 14,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 20,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 9,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 15,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 21,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 10,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 16,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 22,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 11,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 17,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 23,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 9,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 12,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 18,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 24,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 11,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Left",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "< SNAP",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Left",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP >",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder7",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder13",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder19",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder8",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder14",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder20",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top3",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder3",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder9",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder15",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 3,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder21",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 3,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top5",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 3,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder4",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder10",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder16",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 4,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder22",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 4,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top7",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 4,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder5",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder11",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder17",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 5,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder23",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 5,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top9",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 5,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder6",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder12",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder18",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 6,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder24",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 6,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top11",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 6,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right3",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 3,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right4",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 4,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right5",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 5,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right6",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 6,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right7",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 7,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right8",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 8,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "< SNAP",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/left1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "previousScene",
+          "command": {
+           "parameters": [],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SNAP >",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/left2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "nextScene",
+          "command": {
+           "parameters": [],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      }
+     ]
+    }
+   },
+   {
+    "parameters": [
+     {
+      "value": [
+       20.0,
+       -300.0
+      ],
+      "controlAddress": "/viewUIPosition"
+     },
+     {
+      "value": [
+       500.0,
+       640.0
+      ],
+      "controlAddress": "/viewUISize"
+     },
+     {
+      "value": true,
+      "controlAddress": "/active"
+     }
+    ],
+    "niceName": "KARL bank 2 > Soundscape",
+    "type": "State",
+    "processors": {
+     "items": [
+      {
+       "niceName": "KARL labels",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/page",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 13,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 19,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 14,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 20,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 9",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 9,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 9",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 15,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 9",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 21,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 9",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 9",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 10",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 10,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 10",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 16,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 10",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 22,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 10",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 10",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 11",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 11,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 11",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 17,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 11",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 23,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 11",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 9,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 11",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "X 12",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 12,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "Y 12",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 18,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "SPREAD 12",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 24,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "REVERB 12",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 11,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "MUTE 12",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Left",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "< SNAP",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Left",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP >",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder7",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder13",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 7,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder19",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 7,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 7,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder8",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder14",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 8,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder20",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 8,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top3",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 8,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 9",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder3",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 9,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 9",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder9",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 9,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 9",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder15",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 9,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 9",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder21",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 9,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 9",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top5",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 9,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 10",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder4",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 10,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 10",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder10",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 10,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 10",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder16",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 10,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 10",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder22",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 10,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 10",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top7",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 10,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 11",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder5",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 11,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 11",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder11",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 11,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 11",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder17",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 11,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 11",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder23",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 11,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 11",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top9",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 11,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "X 12",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder6",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionX",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 12,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "xPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Y 12",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder12",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "coordinateMappingSourcePositionY",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/coordinateMapping"
+            },
+            {
+             "value": 12,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "yPosition": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SPREAD 12",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder18",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "sourceSpread",
+          "command": {
+           "parameters": [
+            {
+             "value": 12,
+             "controlAddress": "/object"
+            }
+           ],
+           "paramLinks": {
+            "spread": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "REVERB 12",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder24",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": [
+         {
+          "niceName": "Remap",
+          "type": "Remap",
+          "filterParams": {
+           "parameters": [
+            {
+             "value": true,
+             "controlAddress": "/useCustomInputRange"
+            },
+            {
+             "value": [
+              0,
+              1
+             ],
+             "controlAddress": "/inputMin_Max"
+            },
+            {
+             "value": [
+              -60,
+              12
+             ],
+             "controlAddress": "/targetMin_Max"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "reverbSendGain",
+          "command": {
+           "parameters": [
+            {
+             "value": 12,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "sendGainDB": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "MUTE 12",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top11",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Sound Objects",
+          "commandType": "matrixInputMute",
+          "command": {
+           "parameters": [
+            {
+             "value": 12,
+             "controlAddress": "/soundObject#"
+            }
+           ],
+           "paramLinks": {
+            "mute": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right3",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 3,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right4",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 4,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right5",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 5,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right6",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 6,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right7",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 7,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right8",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "sceneRecall",
+          "command": {
+           "parameters": [
+            {
+             "value": 8,
+             "controlAddress": "/majorIndex"
+            },
+            {
+             "value": 0,
+             "controlAddress": "/minorIndex"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "< SNAP",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/left1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "previousScene",
+          "command": {
+           "parameters": [],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SNAP >",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/left2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "dbDS100",
+          "commandPath": "Scenes",
+          "commandType": "nextScene",
+          "command": {
+           "parameters": [],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,6616 @@
+{
+ "metaData": {
+  "version": "1.10.3",
+  "versionNumber": 68099
+ },
+ "modules": {
+  "items": [
+   {
+    "niceName": "KARL",
+    "type": "KARL",
+    "params": {
+     "containers": {
+      "oscInput": {
+       "parameters": [
+        {
+         "value": 12000,
+         "controlAddress": "/localPort"
+        }
+       ]
+      },
+      "oscOutputs": {
+       "items": [
+        {
+         "parameters": [
+          {
+           "value": true,
+           "controlAddress": "/local"
+          },
+          {
+           "value": 12001,
+           "controlAddress": "/remotePort"
+          }
+         ],
+         "niceName": "OSC Output",
+         "type": "BaseItem"
+        }
+       ]
+      }
+     }
+    }
+   },
+   {
+    "niceName": "L-ISA",
+    "type": "L-ISA OSC",
+    "params": {
+     "containers": {
+      "oscInput": {
+       "parameters": [
+        {
+         "value": 9000,
+         "controlAddress": "/localPort"
+        }
+       ]
+      },
+      "oscOutputs": {
+       "items": [
+        {
+         "parameters": [
+          {
+           "value": true,
+           "controlAddress": "/local"
+          },
+          {
+           "value": 8880,
+           "controlAddress": "/remotePort"
+          }
+         ],
+         "niceName": "OSC Output",
+         "type": "BaseItem"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ },
+ "states": {
+  "items": [
+   {
+    "parameters": [
+     {
+      "value": [
+       -520.0,
+       -300.0
+      ],
+      "controlAddress": "/viewUIPosition"
+     },
+     {
+      "value": [
+       500.0,
+       640.0
+      ],
+      "controlAddress": "/viewUISize"
+     },
+     {
+      "value": true,
+      "controlAddress": "/active"
+     }
+    ],
+    "niceName": "KARL bank 1 > L-ISA",
+    "type": "State",
+    "processors": {
+     "items": [
+      {
+       "niceName": "KARL labels",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/page",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 13,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 19,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 14,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 20,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 9,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 15,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 21,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 10,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 16,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 22,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 11,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 17,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 23,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 10,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 12,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 18,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 24,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 12,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Left",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "< SNAP",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Left",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP >",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "1",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder7",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "1",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder13",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "1",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder19",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "1",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "1",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "2",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder8",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "2",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder14",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "2",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder20",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "2",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top4",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "2",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder3",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "3",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder9",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "3",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder15",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "3",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder21",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "3",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top6",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "3",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder4",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "4",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder10",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "4",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder16",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "4",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder22",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "4",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top8",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "4",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder5",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "5",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder11",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "5",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder17",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "5",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder23",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "5",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top10",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "5",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder6",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "6",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder12",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "6",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder18",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "6",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/encoders/encoder24",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "6",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/top12",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "6",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right3",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 3,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right4",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 4,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right5",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 5,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right6",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 6,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right7",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 7,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/right8",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 8,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "< SNAP",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/left1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Previous Snapshot",
+          "command": {
+           "parameters": [],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SNAP >",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank1/keys/left2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Next Snapshot",
+          "command": {
+           "parameters": [],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      }
+     ]
+    }
+   },
+   {
+    "parameters": [
+     {
+      "value": [
+       20.0,
+       -300.0
+      ],
+      "controlAddress": "/viewUIPosition"
+     },
+     {
+      "value": [
+       500.0,
+       640.0
+      ],
+      "controlAddress": "/viewUISize"
+     },
+     {
+      "value": true,
+      "controlAddress": "/active"
+     }
+    ],
+    "niceName": "KARL bank 2 > L-ISA",
+    "type": "State",
+    "processors": {
+     "items": [
+      {
+       "niceName": "KARL labels",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/page",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 13,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 19,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 14,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 20,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 9",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 9,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 9",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 15,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 9",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 21,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 9",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 9",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 10",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 10,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 10",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 16,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 10",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 22,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 10",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 10",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 11",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 11,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 11",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 17,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 11",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 23,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 11",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 10,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 11",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "PAN 12",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 12,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "WIDTH 12",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 18,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "DIST 12",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Encoders",
+          "commandType": "Set Encoder Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": 24,
+             "controlAddress": "/encoder"
+            },
+            {
+             "value": "ELEV 12",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Top",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 12,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SOLO 12",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 1",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 2",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 3,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 3",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 4,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 4",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 5,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 5",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 6,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 6",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 7,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 7",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Right",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 8,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP 8",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Left",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 1,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "< SNAP",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         },
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "karl",
+          "commandPath": "Keys",
+          "commandType": "Set Key Name",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/bank"
+            },
+            {
+             "value": "Left",
+             "controlAddress": "/edge"
+            },
+            {
+             "value": 2,
+             "controlAddress": "/key"
+            },
+            {
+             "value": "SNAP >",
+             "controlAddress": "/name"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "7",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder7",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "7",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder13",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "7",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder19",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "7",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "7",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "8",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder8",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "8",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder14",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "8",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder20",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "8",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top4",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "8",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 9",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder3",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "9",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 9",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder9",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "9",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 9",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder15",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "9",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 9",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder21",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "9",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 9",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top6",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "9",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 10",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder4",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "10",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 10",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder10",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "10",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 10",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder16",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "10",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 10",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder22",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "10",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 10",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top8",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "10",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 11",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder5",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "11",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 11",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder11",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "11",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 11",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder17",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "11",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 11",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder23",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "11",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 11",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top10",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "11",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "PAN 12",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder6",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Pan",
+          "command": {
+           "parameters": [
+            {
+             "value": "12",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "pan": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "WIDTH 12",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder12",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Width",
+          "command": {
+           "parameters": [
+            {
+             "value": "12",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "width": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "DIST 12",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder18",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Distance",
+          "command": {
+           "parameters": [
+            {
+             "value": "12",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "distance": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "ELEV 12",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/encoders/encoder24",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Elevation",
+          "command": {
+           "parameters": [
+            {
+             "value": "12",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "elevation": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SOLO 12",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/top12",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Source",
+          "commandType": "Source Solo",
+          "command": {
+           "parameters": [
+            {
+             "value": "12",
+             "controlAddress": "/source"
+            }
+           ],
+           "paramLinks": {
+            "solo": {
+             "linkType": 1,
+             "mappingValueIndex": 0
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 1",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 1,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 2",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 2,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 3",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right3",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 3,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 4",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right4",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 4,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 5",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right5",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 5,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 6",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right6",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 6,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 7",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right7",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 7,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "Snapshot 8",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/right8",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Snapshot",
+          "command": {
+           "parameters": [
+            {
+             "value": 8,
+             "controlAddress": "/snapshot"
+            }
+           ],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "< SNAP",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/left1",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Previous Snapshot",
+          "command": {
+           "parameters": [],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      },
+      {
+       "niceName": "SNAP >",
+       "editorIsCollapsed": true,
+       "type": "Mapping",
+       "im": {
+        "items": [
+         {
+          "parameters": [
+           {
+            "value": "/modules/karl/values/bank2/keys/left2",
+            "controlAddress": "/inputValue"
+           }
+          ],
+          "niceName": "Input Value",
+          "type": "Input Value"
+         }
+        ]
+       },
+       "params": {
+        "parameters": [
+         {
+          "value": true,
+          "controlAddress": "/sendOnInputChangeOnly"
+         }
+        ],
+        "editorIsCollapsed": true
+       },
+       "filters": {
+        "items": []
+       },
+       "outputs": {
+        "items": [
+         {
+          "niceName": "MappingOutput",
+          "type": "BaseItem",
+          "commandModule": "l_isa",
+          "commandPath": "Snapshots",
+          "commandType": "Fire Next Snapshot",
+          "command": {
+           "parameters": [],
+           "paramLinks": {}
+          }
+         }
+        ]
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}
