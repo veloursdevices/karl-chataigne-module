@@ -1,5 +1,9 @@
 # Example sessions
 
+Checked in Chataigne 1.10.3 with simulated processors (every mapping loads and
+sends the expected OSC). Not yet tried with the real processors: check ranges
+and ports on yours before a show.
+
 Open a session in Chataigne with the KARL module and the processor's own
 community module installed (Community Modules: SPAT Revolution, L-ISA OSC,
 d&b DS100, SPACE HUB Control). On KARL, make one OSC surface page per bank

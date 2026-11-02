@@ -2,7 +2,7 @@
   "name": "KARL",
   "type": "OSC",
   "path": "Hardware",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Velours Devices",
   "description": "KARL by Velours Devices as a control surface: 24 knobs and 40 keys per bank, with names, colours and values sent back to KARL. In the KARL configurator, add the Chataigne target in Connections and an OSC surface page from Library.",
   "url": "https://github.com/veloursdevices/karl-chataigne-module",
@@ -1044,7 +1044,7 @@
           "default": 1,
           "min": 1,
           "max": 99,
-          "description": "The KARL page's bank"
+          "description": "The KARL page's bank. Values come back for banks 1-4"
         },
         "Encoder": {
           "type": "Integer",
@@ -1070,7 +1070,7 @@
           "default": 1,
           "min": 1,
           "max": 99,
-          "description": "The KARL page's bank"
+          "description": "The KARL page's bank. Values come back for banks 1-4"
         },
         "Encoder": {
           "type": "Integer",
@@ -1094,7 +1094,7 @@
           "default": 1,
           "min": 1,
           "max": 99,
-          "description": "The KARL page's bank"
+          "description": "The KARL page's bank. Values come back for banks 1-4"
         },
         "Encoder": {
           "type": "Integer",
@@ -1123,7 +1123,7 @@
           "default": 1,
           "min": 1,
           "max": 99,
-          "description": "The KARL page's bank"
+          "description": "The KARL page's bank. Values come back for banks 1-4"
         },
         "Edge": {
           "type": "Enum",
@@ -1139,7 +1139,7 @@
           "default": 1,
           "min": 1,
           "max": 12,
-          "description": "From the left (top, bottom) or the top (left, right)"
+          "description": "Top and bottom 1-12 from the left, left and right 1-8 from the top"
         },
         "On": {
           "type": "Boolean",
@@ -1156,7 +1156,7 @@
           "default": 1,
           "min": 1,
           "max": 99,
-          "description": "The KARL page's bank"
+          "description": "The KARL page's bank. Values come back for banks 1-4"
         },
         "Edge": {
           "type": "Enum",
@@ -1172,7 +1172,7 @@
           "default": 1,
           "min": 1,
           "max": 12,
-          "description": "From the left (top, bottom) or the top (left, right)"
+          "description": "Top and bottom 1-12 from the left, left and right 1-8 from the top"
         },
         "Name": {
           "type": "String",
@@ -1189,7 +1189,7 @@
           "default": 1,
           "min": 1,
           "max": 99,
-          "description": "The KARL page's bank"
+          "description": "The KARL page's bank. Values come back for banks 1-4"
         },
         "Edge": {
           "type": "Enum",
@@ -1205,7 +1205,7 @@
           "default": 1,
           "min": 1,
           "max": 12,
-          "description": "From the left (top, bottom) or the top (left, right)"
+          "description": "Top and bottom 1-12 from the left, left and right 1-8 from the top"
         },
         "Color": {
           "type": "Color",

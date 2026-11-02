@@ -62,6 +62,12 @@ function oscEvent(address, args)
 	}
 }
 
+function keyValue(bank, edge, key)
+{
+	var values = local.values.getChild("bank" + bank);
+	return values ? values.keys.getChild(edge + key) : null;
+}
+
 // --------------------------------------------------------------- to KARL
 
 function send(address, value)
@@ -104,7 +110,14 @@ function setEncoderName(bank, encoder, name)	{ send(encoderAddress(bank, encoder
 function setEncoderColor(bank, encoder, color)	{ send(encoderAddress(bank, encoder) + "/color", colorString(color)); }
 
 // KARL reads numbers only: a key is 1 or 0.
-function setKey(bank, edge, key, on)			{ send(keyAddress(bank, edge, key), on ? 1 : 0); }
+// The key's value here follows what KARL now shows: left stale, KARL's next
+// press could match it and change nothing.
+function setKey(bank, edge, key, on)
+{
+	send(keyAddress(bank, edge, key), on ? 1 : 0);
+	var value = keyValue(bank, edge, key);
+	if (value) value.set(on);
+}
 function setKeyName(bank, edge, key, name)		{ send(keyAddress(bank, edge, key) + "/name", "" + name); }
 function setKeyColor(bank, edge, key, color)	{ send(keyAddress(bank, edge, key) + "/color", colorString(color)); }
 

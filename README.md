@@ -15,7 +15,9 @@ KARL has no network: its OSC goes through the KARL configurator on the computer.
    one page per bank you want (bank 2 for objects 7-12, and so on).
    **Save & send**.
 3. In Chataigne, add the **KARL** module (Community Modules > Hardware). It
-   listens on 12000 and sends to 127.0.0.1:12001. If Chataigne runs on another
+   listens on 12000 and sends to 127.0.0.1:12001. To install it by hand,
+   download this repository and put its folder in
+   `Documents/Chataigne/modules`, then restart Chataigne. If Chataigne runs on another
    computer, set that computer as the target's host in the configurator, and
    the configurator's computer as the module's output.
 
@@ -27,6 +29,8 @@ KARL has no network: its OSC goes through the KARL configurator on the computer.
 | `Bank n > Encoders > Encoder 1-24` | 0-1, rows left to right, top row first |
 | `Bank n > Keys > Top 1-12, Bottom 1-12, Left 1-8, Right 1-8` | on / off |
 
+Values exist for banks 1-4. Commands reach any bank.
+
 Keys toggle by default: each press changes the value once. A key that recalls
 a snapshot therefore fires once per press. (A momentary surface page, built
 with "momentary" ticked, sends on for press and off for release.)
@@ -35,7 +39,7 @@ with "momentary" ticked, sends on for press and off for release.)
 
 | Command | |
 |---|---|
-| Set Encoder, Set Key | moves the ring, lights the key |
+| Set Encoder, Set Key | moves the ring, lights the key (Set Key also updates the key's value here) |
 | Set Encoder Name, Set Key Name | replaces the name on the screen |
 | Set Encoder Color, Set Key Color | replaces the colour |
 | Go To Page | a page name, or its number in KARL's list |
